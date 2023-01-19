@@ -1,0 +1,26 @@
+.App{
+    max-width: 1170px;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.App__title{
+    color: #ffffff;
+    font-family: "Exo 2.0- Thin";
+    font-size: 36px;
+    font-weight: 100;
+    text-align: center;
+    padding: 36px 0px 26px 0px;
+    margin: 0px;
+}
+
+@media (max-width:1200px),(max-device-width:1200px) {
+    .App{
+        position: static;
+        transform: none;
+        margin-bottom: 50px;
+    }
+}

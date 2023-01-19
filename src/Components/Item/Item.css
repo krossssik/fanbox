@@ -1,0 +1,195 @@
+.Item {
+    position: relative;
+    width: 320px;
+    height: 480px;
+    border: 4px solid #1698d9;
+    margin-top: 40px;
+    background: #fff;
+    border-radius: 10px;
+    background-color: #f2f2f2;
+    padding: 21px 50px 21px 50px;
+    cursor: pointer;
+}
+
+.Item *{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.Item-wrapper.disabled .Item__inner-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    z-index: 1;
+    background: #c9c9c990;
+}
+
+.Item__title {
+    color: #666666;
+    font-family: "Trebuchet MS";
+}
+
+.Item__name {
+    color: #000000;
+    font-family: "Trebuchet MS";
+    font-size: 48px;
+    font-weight: 700;
+    margin: 0px;
+}
+
+.Item__stuffing {
+    color: #000000;
+    font-family: "Trebuchet MS";
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.Item__portionCount {
+    margin-top: 10px;
+    line-height: 15px;
+    color: #666666;
+    font-family: "Trebuchet MS";
+}
+
+.Item__gift {
+    line-height: 15px;
+    color: #666666;
+    font-family: "Trebuchet MS";
+}
+
+.Item__weight {
+    width: 80px;
+    height: 80px;
+    background-color: #1698d9;
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.Item-wrapper.disabled .Item__weight {
+    background: #b3b3b3;
+}
+.Item-wrapper.selected .Item__weight {
+    background: #e52e7a;
+}
+
+.Item-wrapper.disabled .Item__label_buy {
+    display: none;
+}
+
+.Item-wrapper.disabled .Item__label_sadness {
+    display: block;
+}
+
+.Item-wrapper.selected .Item__label_selected {
+    display: block;
+}
+.Item-wrapper.notSelected .Item__label_buy {
+    display: block;
+}
+
+.Item__weight-value {
+    color: #ffffff;
+    font-family: "Trebuchet MS";
+    font-size: 42px;
+}
+
+.Item__weight-kg {
+    color: #ffffff;
+    font-family: "Trebuchet MS";
+    font-size: 21px;
+    position: relative;
+    bottom: 5px;
+}
+
+.Item__label {
+    white-space: nowrap;
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.Item__label_buy {
+    color: #ffffff;
+    font-size: 13px;
+    font-family: "Trebuchet MS";
+    display: none;
+}
+
+.Item__label-link {
+    color: #1698d9;
+    font-family: "Trebuchet MS";
+    font-weight: 700;
+    border-bottom: 1px dashed #1698d9;
+}
+
+.Item__label_sadness {
+    color: #ffff66;
+    font-family: "Trebuchet MS";
+    font-size: 13px;
+    display: none;
+}
+
+.Item__label_selected{
+    color: #ffffff;
+    font-size: 13px;
+    font-family: "Trebuchet MS";
+    display: none;
+}
+
+.Item__nyamushka {
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    background: url("/images/cat.png") no-repeat center / cover;
+    width: 242px;
+    height: 265px;
+}
+
+@supports (clip-path: polygon(40px 0, 100% 0, 100% 100%, 0 100%, 0 40px)) {
+    .Item {
+        clip-path: polygon(40px 0, 100% 0, 100% 100%, 0 100%, 0 40px);
+    }
+    .Item::before {
+        content: '';
+        display: block;
+        transform: rotate(-45deg);
+        position: absolute;
+        transform-origin: bottom left;
+        top: 30px;
+        left: 0;
+        width: 53px;
+        height: 7px;
+        background: #1698d9;
+    }
+    .Item-wrapper.disabled .Item::before {
+        background: #b3b3b3;
+    }
+    .Item-wrapper.disabled .Item {
+        border: 4px solid #b3b3b3;
+        cursor: not-allowed;
+    }
+    .Item-wrapper.selected .Item {
+        border: 4px solid #d91667;
+    }
+    .Item-wrapper.selected .Item::before {
+        background: #d91667;
+    }
+}
+
+@media (max-width:360px),(max-device-width:360px) {
+    .Item{
+        width: 290px;
+        margin: 0px auto;
+    }
+}

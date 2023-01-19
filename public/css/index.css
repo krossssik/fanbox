@@ -1,0 +1,16 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: url('/images/background.png') no-repeat center / cover;
+  min-height: 100vh;
+}
+
+@font-face {
+    src: url('../../src/fonts/Exo2.0-Thin.otf');
+    font-family: "Exo 2.0- Thin";
+}
+@font-face {
+    src: url('../../src/fonts/Trebuchet MS.ttf');
+    font-family: "Trebuchet MS";
+}
